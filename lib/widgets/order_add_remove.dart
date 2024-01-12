@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_bloc/models/product.dart';
 
-import '../blocs/cart_bloc/bloc/cart_bloc.dart';
+import 'package:project_bloc/blocs/cart_bloc/cart_bloc.dart';
+
 
 class OrderAddRemove extends StatelessWidget {
   const OrderAddRemove({super.key, required this.product});

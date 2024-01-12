@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../blocs/cart_bloc/bloc/cart_bloc.dart';
+import 'package:project_bloc/blocs/cart_bloc/cart_bloc.dart';
 
 class CardDefelt extends StatelessWidget {
   const CardDefelt({super.key, this.onTap, required this.groupValue});

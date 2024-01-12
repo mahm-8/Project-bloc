@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../blocs/cart_bloc/bloc/cart_bloc.dart';
+import 'package:project_bloc/blocs/cart_bloc/cart_bloc.dart';
+
 import 'category_widget.dart';
 
 class SortWatch extends StatelessWidget {
@@ -11,6 +12,12 @@ class SortWatch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CartBloc, CartState>(
+      buildWhen: (oldstate, newState) {
+        if (newState is SortCartState) {
+          return true;
+        }
+        return false;
+      },
       builder: (context, state) {
         if (state is SortCartState) {
           return Column(
@@ -46,7 +53,7 @@ class SortWatch extends StatelessWidget {
                     width: 10,
                   ),
                   CategortWidget(
-                    containerColor: state.value == 'popular'
+                    containerColor: state.value == 'Popularity'
                         ? const Color(0xfffcc873)
                         : const Color(0xfff3f3f3),
                     textContainer: 'Popularity',
@@ -64,7 +71,7 @@ class SortWatch extends StatelessWidget {
               Row(
                 children: [
                   CategortWidget(
-                    containerColor: state.value == 'popularity'
+                    containerColor: state.value == 'Top Selling'
                         ? const Color(0xfffcc873)
                         : const Color(0xfff3f3f3),
                     textContainer: 'Top Selling',
@@ -126,7 +133,7 @@ class SortWatch extends StatelessWidget {
                   width: 10,
                 ),
                 CategortWidget(
-                  containerColor: containerType == 'popular'
+                  containerColor: containerType == 'Popularity'
                       ? const Color(0xfffcc873)
                       : const Color(0xfff3f3f3),
                   textContainer: 'Popularity',
@@ -144,7 +151,7 @@ class SortWatch extends StatelessWidget {
             Row(
               children: [
                 CategortWidget(
-                  containerColor: containerType == 'popularity'
+                  containerColor: containerType == 'Top Selling'
                       ? const Color(0xfffcc873)
                       : const Color(0xfff3f3f3),
                   textContainer: 'Top Selling',

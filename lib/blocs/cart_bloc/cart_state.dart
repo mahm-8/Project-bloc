@@ -42,3 +42,9 @@ final class PagesState extends CartState {
 
   PagesState(this.value);
 }
+class RangeCartState extends CartState {
+  final RangeValues value;
+  RangeCartState(
+    this.value,
+  );
+}

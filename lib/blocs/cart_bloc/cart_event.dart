@@ -57,3 +57,9 @@ class SortCartEvent extends CartEvent {
     this.value,
   );
 }
+class RangeCartEvent extends CartEvent {
+  final RangeValues value;
+  RangeCartEvent(
+    this.value,
+  );
+}

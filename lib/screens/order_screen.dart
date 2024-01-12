@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project_bloc/blocs/cart_bloc/cart_bloc.dart';
 import 'package:project_bloc/data/global.dart';
 import 'package:project_bloc/screens/checkout_screen.dart';
 import 'package:project_bloc/widgets/display_order.dart';
 import 'package:project_bloc/widgets/two_text.dart';
-
-import '../blocs/cart_bloc/bloc/cart_bloc.dart';
-
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
 

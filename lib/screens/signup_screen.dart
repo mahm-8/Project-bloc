@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project_bloc/blocs/auth_bloc/bloc/auth_bloc.dart';
+import 'package:project_bloc/blocs/auth_bloc/auth_bloc.dart';
 import 'package:project_bloc/screens/signin_screen.dart';
 import 'package:project_bloc/widgets/button_text.dart';
 import 'package:project_bloc/widgets/header.dart';

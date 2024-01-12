@@ -48,7 +48,7 @@ class Home extends StatelessWidget {
               child: const Icon(Icons.filter_list),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const FilterScreen(),
+                  builder: (context) => FilterScreen(),
                 ));
               },
             ),

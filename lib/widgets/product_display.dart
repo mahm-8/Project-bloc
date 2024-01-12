@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_bloc/data/global.dart';
 import 'package:project_bloc/widgets/product_widget.dart';
-import '../blocs/cart_bloc/bloc/cart_bloc.dart';
+import 'package:project_bloc/blocs/cart_bloc/cart_bloc.dart';
+
 
 class ProductDisplay extends StatelessWidget {
   const ProductDisplay({

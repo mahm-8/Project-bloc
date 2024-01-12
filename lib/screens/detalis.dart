@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project_bloc/blocs/cart_bloc/bloc/cart_bloc.dart';
+import 'package:project_bloc/blocs/cart_bloc/cart_bloc.dart';
 import 'package:project_bloc/models/product.dart';
 import 'package:project_bloc/screens/order_screen.dart';
 
 class Details extends StatelessWidget {
-  Details({super.key, required this.product});
+  const Details({super.key, required this.product});
   final Product product;
-  int count = 1;
+  final int count = 1;
   @override
   Widget build(BuildContext context) {
     // calculateGlobalPrice();

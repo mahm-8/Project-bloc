@@ -22,37 +22,35 @@ class SearchScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Material(
                 shadowColor: const Color.fromARGB(255, 201, 191, 191),
-                child: Container(
-                  child: TextField(
-                    controller: controller,
-                    onChanged: (query) {
-                      context.read<SearchBloc>().add(FindSearchEvent(query));
-                    },
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(25)),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(25)),
-                      prefixIcon: const Icon(
-                        Icons.search,
-                        color: Color(0xffb9b6b6),
-                      ),
-                      suffixIcon: InkWell(
-                        onTap: () {
-                          context.read<SearchBloc>().add(FindSearchEvent(''));
-                          controller.clear();
-                        },
-                        child: const Icon(
-                          Icons.close,
-                          color: Color(0xff0f141d),
-                        ),
-                      ),
-                      border: InputBorder.none,
-                      filled: true,
-                      fillColor: const Color(0xffffffff),
+                child: TextField(
+                  controller: controller,
+                  onChanged: (query) {
+                    context.read<SearchBloc>().add(FindSearchEvent(query));
+                  },
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(25)),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(25)),
+                    prefixIcon: const Icon(
+                      Icons.search,
+                      color: Color(0xffb9b6b6),
                     ),
+                    suffixIcon: InkWell(
+                      onTap: () {
+                        context.read<SearchBloc>().add(FindSearchEvent(''));
+                        controller.clear();
+                      },
+                      child: const Icon(
+                        Icons.close,
+                        color: Color(0xff0f141d),
+                      ),
+                    ),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: const Color(0xffffffff),
                   ),
                 ),
               ),

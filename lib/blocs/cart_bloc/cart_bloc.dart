@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/global.dart';
 import '../../../models/product.dart';
@@ -7,6 +10,7 @@ part 'cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
   CartBloc() : super(CartInitial()) {
+    on<RangeCartEvent>(rangeValue);
     on<AddCartEvent>((event, emit) {
       if (!orderProducts.contains(event.product)) {
         orderProducts.add(event.product);
@@ -103,12 +107,12 @@ class CartBloc extends Bloc<CartEvent, CartState> {
           break;
         case 2:
           {
-            emit(SortCartState('popular'));
+            emit(SortCartState('popularity'));
           }
           break;
         case 3:
           {
-            emit(SortCartState('popularity'));
+            emit(SortCartState('top Salling'));
           }
           break;
         case 4:
@@ -118,5 +122,9 @@ class CartBloc extends Bloc<CartEvent, CartState> {
           break;
       }
     });
+  }
+
+  FutureOr<void> rangeValue(RangeCartEvent event, Emitter<CartState> emit) {
+    emit(RangeCartState(event.value));
   }
 }

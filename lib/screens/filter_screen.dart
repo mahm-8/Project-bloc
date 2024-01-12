@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../blocs/cart_bloc/bloc/cart_bloc.dart';
+import 'package:project_bloc/blocs/cart_bloc/cart_bloc.dart';
 import '../widgets/filter_category.dart';
 import '../widgets/sort_watch.dart';
 import '/screens/product_display_by_sort.dart';
 import '../widgets/text_title_widget.dart';
 
-class FilterScreen extends StatefulWidget {
-  const FilterScreen({super.key});
+// ignore: must_be_immutable
+class FilterScreen extends StatelessWidget {
+  FilterScreen({super.key});
 
-  @override
-  State<FilterScreen> createState() => _MyWidgetState();
-}
-
-RangeValues _rangeSliderDiscreteValues = const RangeValues(40, 80);
-
-class _MyWidgetState extends State<FilterScreen> {
   String containerType = '';
 
   String containerType2 = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,19 +60,42 @@ class _MyWidgetState extends State<FilterScreen> {
                 const SizedBox(
                   height: 18,
                 ),
-                RangeSlider(
-                  values: _rangeSliderDiscreteValues,
-                  activeColor: const Color(0xfffcc873),
-                  inactiveColor: const Color(0xffe5e4e4),
-                  min: 0,
-                  max: 100,
-                  divisions: 8,
-                  labels: RangeLabels('${_rangeSliderDiscreteValues.start}',
-                      '${_rangeSliderDiscreteValues.end}'),
-                  onChanged: (values) {
-                    setState(() {
-                      _rangeSliderDiscreteValues = values;
-                    });
+                BlocBuilder<CartBloc, CartState>(
+                  buildWhen: (previous, current) {
+                    if (current is RangeCartState) {
+                      return true;
+                    }
+                    return false;
+                  },
+                  builder: (context, state) {
+                    if (state is RangeCartState) {
+                      return RangeSlider(
+                        values: state.value,
+                        activeColor: const Color(0xfffcc873),
+                        inactiveColor: const Color(0xffe5e4e4),
+                        min: 0,
+                        max: 100,
+                        divisions: 8,
+                        labels: RangeLabels(
+                            '${state.value.start}', '${state.value.end}'),
+                        onChanged: (values) {
+                          context.read<CartBloc>().add(RangeCartEvent(values));
+                        },
+                      );
+                    }
+                    return RangeSlider(
+                      values: _rangeSliderDiscreteValues,
+                      activeColor: const Color(0xfffcc873),
+                      inactiveColor: const Color(0xffe5e4e4),
+                      min: 0,
+                      max: 100,
+                      divisions: 8,
+                      labels: RangeLabels('${_rangeSliderDiscreteValues.start}',
+                          '${_rangeSliderDiscreteValues.end}'),
+                      onChanged: (values) {
+                        context.read<CartBloc>().add(RangeCartEvent(values));
+                      },
+                    );
                   },
                 ),
                 const Spacer(),
@@ -96,7 +114,7 @@ class _MyWidgetState extends State<FilterScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => ProductDisplayBySort(
-                                  containerType: containerType)),
+                                  containerType: containerType2)),
                         );
                       } else {
                         showDialog(
@@ -118,3 +136,5 @@ class _MyWidgetState extends State<FilterScreen> {
         ));
   }
 }
+
+RangeValues _rangeSliderDiscreteValues = const RangeValues(40, 80);
