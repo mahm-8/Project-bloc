@@ -10,22 +10,25 @@ Your task is to create a Flutter app that demonstrates global data management fo
 
 - **Project Submission Deadline:** 26/11/2023 – 9:59 PM
 
-## Minimum Requirements
+## Demo
+**Home**
 
+<img width="264" alt="Screenshot 2024-01-12 040214" src="https://github.com/mahm-8/Project-bloc/assets/141933812/4ace7c8e-91a7-4b3e-8795-ac9b3059cd0a">
 
-- **Correct Structure:** Ensure that the application is built with the appropriate structure. Follow Flutter's best practices for organizing code and project files.
-- **Clean Code:** Write code that is clear, well-organized, and scalable. Use meaningful variable and function names and follow standard coding conventions to improve code readability.
-- **Applying Concepts:** Make proper use of programming concepts and techniques. Implement efficient algorithms and follow Flutter's design patterns to create a robust and functional shopping list app.
-- **Applying BLoC:** Implement state management (BLoC) in Auth, Home, Product details, Search, Cart, and Profile screens.
-- **Applying Change Theme:** The user should be able to change the theme between Light and Dark Theme.
+**Details**
 
+<img width="263" alt="Screenshot 2024-01-12 040239" src="https://github.com/mahm-8/Project-bloc/assets/141933812/422b0dd8-15fe-4a87-bcd6-7f6ffa0987f5">
 
-## Delivery Requirements
+**Cart**
 
-- **Upload the Entire Project:** Ensure that you upload the complete project, which includes all necessary code files, assets, and configurations, to the repository on GitHub.
-- **Readme File:**
-  - Create a README.md file in the root directory of your GitHub repository.
-  - Provide a detailed and well-structured description of the project in the README file, including the following sections:
-    - **Project Overview:** Briefly describe what the shopping list app is about and its main features. Give readers a clear idea of the purpose and functionality of the app.
-    - **Screenshots:** Include relevant screenshots of the app to showcase its appearance and functionalities. Visuals can help users understand the app's design and layout.
+<img width="261" alt="Screenshot 2024-01-12 040253" src="https://github.com/mahm-8/Project-bloc/assets/141933812/6ecaf4a0-e17c-49c9-a5da-0ec8ff8f7330">
+
+**Filter**
+
+https://github.com/mahm-8/Project-bloc/assets/141933812/363fccb2-bc11-4b61-abf6-d016be905382
+
+**Search**
+
+https://github.com/mahm-8/Project-bloc/assets/141933812/c0f6de82-d814-4e8e-9879-e72c64b3e818
+
 
